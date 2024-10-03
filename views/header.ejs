@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogify</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="primary-links">
+        <h1>Blogify</h1>
+        <ul>
+          <li>
+            <%if (locals.is_login) {%>
+            <a href="/new-post" class="link">Add Post</a>
+            <%}%>
+          </li>
+
+          <li>
+            <% if (locals.is_login) { %>
+            <a href="/posts" class="link">All Posts</a>
+            <%}%>
+          </li>
+
+          <li>
+            <% if (locals.is_login) { %>
+            <a href="/my-posts" class="link">My Posts</a>
+            <%}%>
+          </li>
+
+          <li>
+            <%if (locals.is_login) {%>
+            <!-- show nothin -->
+            <%} else {%>
+            <a href="/sign-up" class="link">Sign Up</a>
+            <%}%>
+          </li>
+
+          <li>
+            <%if (locals.is_login) {%>
+            <a href="/logout" class="link">Logout</a>
+            <%} else {%>
+            <a href="/login" class="link">Login</a>
+            <%}%>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

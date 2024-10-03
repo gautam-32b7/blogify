@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogify</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/posts.css" />
+  </head>
+  <body>
+    <header><%- include("header") %></header>
+    <main>
+      <section class="posts">
+        <p class="no-posts">
+          <%if (posts.length === 0) {%> No posts available <%}%>
+        </p>
+
+        <%posts.forEach(post => {%>
+        <article class="post">
+          <h2 class="title"><%= post.title %></h2>
+          <p class="date">
+            <%= new Date(post.date).toLocaleDateString('en-GB', { year:
+            'numeric', month: 'long', day: 'numeric' }) %>
+          </p>
+          <p class="content"><%= post.content %></p>
+          <p class="author">By <%= post.author %></p>
+        </article>
+        <%})%>
+      </section>
+    </main>
+  </body>
+</html>

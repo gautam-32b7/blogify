@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogify</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/new-post.css" />
+  </head>
+  <body>
+    <header><%- include("header") %></header>
+    <main>
+      <form action="/new-post" method="POST">
+        <h2>New Post</h2>
+        <label>Title</label>
+        <input type="text" name="title" required autofocus />
+        <label>Content</label>
+        <textarea name="content" rows="10" required></textarea>
+        <label>Author</label>
+        <input type="text" name="author" required />
+        <button>Create Post</button>
+      </form>
+    </main>
+  </body>
+</html>

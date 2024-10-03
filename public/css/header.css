@@ -1,0 +1,38 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #0ea5e9;
+  margin-bottom: 9.6rem;
+}
+
+.primary-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.4rem;
+}
+
+.primary-links ul {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.primary-links h1 {
+  color: #f8fafc;
+  font-size: 2.8rem;
+}
+
+.link {
+  color: #f8fafc;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #0f172a;
+}

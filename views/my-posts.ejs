@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogify</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/posts.css" />
+  </head>
+  <body>
+    <header><%- include("header") %></header>
+    <main class="my-posts-wrapper">
+      <p class="no-posts">
+        <%if (posts.length === 0) {%> You haven't written any posts yet. <%}%>
+      </p>
+
+      <%posts.forEach(post => {%>
+      <article class="post">
+        <h2 class="title"><%= post.title %></h2>
+        <p class="date">
+          <%= new Date(post.date).toLocaleDateString('en-US', { year: 'numeric',
+          month: 'long', day: 'numeric' }) %>
+        </p>
+        <p class="content"><%= post.content %></p>
+        <div class="edit-delete">
+          <a href="#" class="edit" role="button">Edit</a>
+          <a href="/delete/<%= post.id%>" class="delete" role="button"
+            >Delete</a
+          >
+        </div>
+      </article>
+      <%})%>
+    </main>
+  </body>
+</html>
